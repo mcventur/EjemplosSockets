@@ -1,6 +1,4 @@
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -16,14 +14,12 @@ public class Servidor {
             try(Socket socketCliente = servidor.accept();){
                 //3 - Atender al cliente: envío y recepción de datos
                 //3A - Abrimos los flujos de entrada y salida. Con try-with-resources
-                try(DataInputStream flujoEntrada = new DataInputStream(socketCliente.getInputStream());
-                    DataOutputStream flujoSalida = new DataOutputStream(socketCliente.getOutputStream());){
+                try(BufferedReader flujoEntrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
+                    PrintWriter flujoSalida = new PrintWriter(socketCliente.getOutputStream());){
                     //3B - Recibir información
-                    String nombreCliente = flujoEntrada.readUTF();
+                    String nombreCliente = flujoEntrada.readLine();
                     //3C - Enviar información
-                    flujoSalida.writeUTF(nombreCliente + ". Te has conectado con el servidor correctamente.");
-                    int numeroLeido = flujoEntrada.readInt();
-                    flujoSalida.writeUTF("Numero leído: " + numeroLeido);
+                    flujoSalida.println(nombreCliente + ". Te has conectado con el servidor correctamente.");
                 }
             }
         } catch (IOException e) {

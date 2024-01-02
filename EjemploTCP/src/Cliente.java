@@ -1,7 +1,4 @@
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.EOFException;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 
 public class Cliente {
@@ -12,22 +9,15 @@ public class Cliente {
     public Cliente() {
         //1 - Conectarse con el servidor. Con try-with-resources
         try(Socket socketCliente = new Socket(HOST, NUM_PUERTO);) {
-            //2 - Envío + Recepción de datos. Con try-with-resources
-            try(DataOutputStream flujoSalida = new DataOutputStream(socketCliente.getOutputStream());
-            DataInputStream flujoEntrada = new DataInputStream(socketCliente.getInputStream());){
+            //2 - Envío + Recepción de datos. Con try-with-resources. IMPORTANTE EL true PARA HACER AUTOFLUSH DEL FLUJO!!
+            try(PrintWriter flujoSalida = new PrintWriter(socketCliente.getOutputStream(), true);
+                BufferedReader flujoEntrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));){
                 //2B - Enviar información
-                flujoSalida.writeUTF("Cliente A");
-                //2B  - DataOutputStream tiene otros métodos para escribir distintos tipos primitivos
-                flujoSalida.writeInt(43);
+                flujoSalida.println("Cliente A");
                 //2C - Recibir información
                 String mensaje = null;
-                try{
-                    while((mensaje = flujoEntrada.readUTF()) != null){
-                        System.out.println("Mensaje leído: " + mensaje);
-                    }
-                } catch (EOFException e){
-                    //esta excepción se lanza al llegar al final del flujo si se sigue intentado leer de él
-                    System.out.println("Se ha llegado al final del flujo");
+                while((mensaje = flujoEntrada.readLine()) != null){
+                    System.out.println("Mensaje leído: " + mensaje);
                 }
             }
         } catch (IOException e) {
