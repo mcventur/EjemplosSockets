@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Direcciones_InetAddress/Direcciones_InetAddress.iml" filepath="$PROJECT_DIR$/Direcciones_InetAddress/Direcciones_InetAddress.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjemploTCP/EjemploTCP.iml" filepath="$PROJECT_DIR$/EjemploTCP/EjemploTCP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjemploTCP_Oracle/EjemploTCP_Oracle.iml" filepath="$PROJECT_DIR$/EjemploTCP_Oracle/EjemploTCP_Oracle.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjemploUDP/EjemploUDP.iml" filepath="$PROJECT_DIR$/EjemploUDP/EjemploUDP.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjemplosSockets.iml" filepath="$PROJECT_DIR$/EjemplosSockets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KnockKnock_Oracle/KnockKnock_Oracle.iml" filepath="$PROJECT_DIR$/KnockKnock_Oracle/KnockKnock_Oracle.iml" />
     </modules>
   </component>
 </project>
