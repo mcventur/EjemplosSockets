@@ -8,8 +8,8 @@ public class ClienteUDP {
 
     public static void main(String[] args) {
         String saludo = "Hola mundo!";
-        byte[] mensaje = new byte[TAM_BUFFER];
-        mensaje = saludo.getBytes();
+        //Transformamos nuestro mensaje en String en un array de byte[]
+        byte[] mensaje = saludo.getBytes();
         //Con UDP, la información de destino y puerto y va en el datagrama, no en el Socket
         try(DatagramSocket socketCliente = new DatagramSocket()) {
             DatagramPacket envio = new DatagramPacket(mensaje, mensaje.length, InetAddress.getByName(DIRECCION), PUERTO);

@@ -40,5 +40,6 @@ public class ServidorUDP {
         System.out.println("Mensaje leido: " + leido.trim());
         System.out.println("Puerto de origen: " + recepcion.getPort());
         System.out.println("Dirección de origen: " + recepcion.getAddress());
+        System.out.println("Socket Address (dirección y puerto) de origen: " + recepcion.getSocketAddress());
     }
 }
