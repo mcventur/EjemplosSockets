@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/EjemploTCP_Oracle/EjemploTCP_Oracle.iml" filepath="$PROJECT_DIR$/EjemploTCP_Oracle/EjemploTCP_Oracle.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjemploUDP/EjemploUDP.iml" filepath="$PROJECT_DIR$/EjemploUDP/EjemploUDP.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjemplosSockets.iml" filepath="$PROJECT_DIR$/EjemplosSockets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocketsTCPHilos/SocketsTCPHilos.iml" filepath="$PROJECT_DIR$/SocketsTCPHilos/SocketsTCPHilos.iml" />
     </modules>
   </component>
 </project>
